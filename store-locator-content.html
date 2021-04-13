@@ -1,0 +1,1457 @@
+<div id="map" style="background-image: url('https://www.zehnder.nl/sites/zehnder.nl/files/map.png'); background-size: cover; background-position: center;"></div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.10.4/polyfill.min.js"></script>
+<script type="text/javascript">
+  /*
+  * Copyright 2017 Google Inc. All rights reserved.
+  *
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+  * file except in compliance with the License. You may obtain a copy of the License at
+  *
+  *     http://www.apache.org/licenses/LICENSE-2.0
+  *
+  * Unless required by applicable law or agreed to in writing, software distributed under
+  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+  * ANY KIND, either express or implied. See the License for the specific language governing
+  * permissions and limitations under the License.
+  */
+
+  var storeLocations = {
+    type: "FeatureCollection",
+    features: [
+      {
+        geometry: { type: "point", coordinates: [4.4686077, 51.9167865] },
+        type: "Feature",
+        properties: {
+          name: "CLB Loodgieters & Installatiebedrijf bv",
+          address: "Bloemkwekersstraat 72-78",
+          zipcode: "3014 PE Rotterdam",
+          email: "info@clbrotterdam.nl",
+          website: "www.clbrotterdam.nl",
+          phone: "010-4360783",
+          storeid: 1,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.8549852, 51.8218477] },
+        type: "Feature",
+        properties: {
+          name: "Installatie Bureau KON",
+          address: "Sluisweg 2C",
+          zipcode: "3371 EV Hardinxveld-Giessendam",
+          email: "info@ibkon.nl",
+          website: "www.ibkon.nl",
+          phone: "0184-633850",
+          storeid: 2,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.588070699999999, 52.0965858] },
+        type: "Feature",
+        properties: {
+          name: "Schouten Hazerswoude",
+          address: "Dorpsstraat 190",
+          zipcode: "2391 CH Hazerswoude-Dorp",
+          email: "info@schoutenhazerswoude.nl",
+          website: "www.schoutenhazerswoude.nl",
+          phone: "0172-589124",
+          storeid: 3,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.6549907, 52.1353915] },
+        type: "Feature",
+        properties: {
+          name: "Van Wijngaarden BV",
+          address: "Prinses Marijkestraat 10",
+          zipcode: "2404 BC Alphen aan den Rijn",
+          email: "info@wijngaarden-bv.nl",
+          website: "www.wijngaarden-bv.nl",
+          phone: "0172-493544",
+          storeid: 4,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.2403564, 52.04609240000001] },
+        type: "Feature",
+        properties: {
+          name: "Gunst Warmtetechniek",
+          address: "Margaretha v. Hennebergweg 61b",
+          zipcode: "2552 BD Den Haag",
+          email: "info@gunstwarmtetechniek.nl",
+          website: "www.gunstwarmtetechniek.nl",
+          phone: "070-3099726",
+          storeid: 5,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.9858286, 52.0888803] },
+        type: "Feature",
+        properties: {
+          name: "JR Techniek",
+          address: "Utrechtsestraatweg 17a",
+          zipcode: "3481 LA Harmelen",
+          email: "info@jrtechniek.nl",
+          website: "www.jrtechniek.nl",
+          phone: "0348-443401",
+          storeid: 6,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.8639082, 52.0842013] },
+        type: "Feature",
+        properties: {
+          name: "Blankestijn Installaties BV",
+          address: "Kuipersweg 27",
+          zipcode: "3449 JA Woerden",
+          email: "info@blankestijn.nl",
+          website: "www.blankestijn.nl",
+          phone: "0348-422888",
+          storeid: 7,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.8562068, 52.0852545] },
+        type: "Feature",
+        properties: {
+          name: "Derks-Diepenbroek",
+          address: "Rietdekkersweg 6",
+          zipcode: "3449 JC Woerden",
+          email: "info@derks-diepenbroek.nl",
+          website: "www.derks-diepenbroek.nl",
+          phone: "0348-411902",
+          storeid: 8,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.8126469, 52.0791269] },
+        type: "Feature",
+        properties: {
+          name: "Heating Service",
+          address: "Weijland 70",
+          zipcode: "2415 BD Nieuwerbrug aan den Rijn",
+          email: "Info@heatingservice.nl",
+          website: "www.heatingservice.nl",
+          phone: "0348-688777",
+          storeid: 9,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.151205699999999, 52.7003016] },
+        type: "Feature",
+        properties: {
+          name: "Bakker Klimaattechniek",
+          address: "Zaadmarkt  9-nov",
+          zipcode: "1681 PB Zwaagdijk Oost",
+          email: "info@bakkerklimaat.nl",
+          website: "www.bakkerklimaat.nl",
+          phone: "0228-712088",
+          storeid: 10,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.8894894, 52.73524159999999] },
+        type: "Feature",
+        properties: {
+          name: "Loodgietersbedrijf Smak",
+          address: "Dorpsstraat  249",
+          zipcode: "1733 AK Nieuwe Niedorp",
+          email: "info@loodgietersmak.nl",
+          website: "www.loodgietersmak.n",
+          phone: "0226-410132",
+          storeid: 11,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.7552875, 52.9366941] },
+        type: "Feature",
+        properties: {
+          name: "PBK Installatietechniek",
+          address: "Drs. F. Bijlweg  238",
+          zipcode: "1784 MC Den Helder",
+          email: "info@pbkbv.nl",
+          website: "www.taylorgroep.nl",
+          phone: "0223-637774",
+          storeid: 12,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.719274, 52.5304379] },
+        type: "Feature",
+        properties: {
+          name: "Daan Installatietechniek",
+          address: "Molenwerf  8K",
+          zipcode: "1911 DB Uitgeest",
+          email: "info@daaninstallatietechniek.nl",
+          website: "www.daaninstallatietechniek.nl",
+          phone: "0251-296459",
+          storeid: 13,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.7456116, 53.2677027] },
+        type: "Feature",
+        properties: {
+          name: "TIS Stiens",
+          address: "Seerob 29",
+          zipcode: "9051 VA Stiens",
+          email: "info@tis-stiens.nl",
+          website: "www.tis-stiens.nl",
+          phone: "085-2084160",
+          storeid: 14,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.8170734, 52.9648169] },
+        type: "Feature",
+        properties: {
+          name: "Huisman Installatietechniek",
+          address: "Produksjewei  1",
+          zipcode: "8501 XD Joure",
+          email: "info@huismaninstallatietechniek.nl",
+          website: "www.huismaninstallatietechniek.nl",
+          phone: "0513-412572",
+          storeid: 15,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.4471623, 52.9771289] },
+        type: "Feature",
+        properties: {
+          name: "Boogaard Installatietechniek",
+          address: "Spoardijk  24-a",
+          zipcode: "8711 CJ Workum",
+          email: "info@boogaardinstallatie.nl",
+          website: "www.boogaardinstallatie.nl",
+          phone: "0515-542770",
+          storeid: 16,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.2976575, 52.98279849999999] },
+        type: "Feature",
+        properties: {
+          name: "Installatiebedrijf Oosterwolde",
+          address: "Venekoterweg 13B",
+          zipcode: "8431 HG Oosterwolde",
+          email: "info@ibobv.nl",
+          website: "www.installatiebedrijf-oosterwolde.nl",
+          phone: "0516-512750",
+          storeid: 17,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.092334900000001, 52.7882323] },
+        type: "Feature",
+        properties: {
+          name: "Vredenburg Installatietechniek",
+          address: "Dolderweg 29",
+          zipcode: "8331 LL Steenwijk",
+          email: "info@vredenburgsteenwijk.nl",
+          website: "www.vredenburgsteenwijk.nl",
+          phone: "0521-588224",
+          storeid: 18,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.6721293, 53.4093364] },
+        type: "Feature",
+        properties: {
+          name: "Technisch Expert Jansen",
+          address: "Hogelandsterstraat  1",
+          zipcode: "9981 GD Uithuizen",
+          email: "info@technischexpertjansen.nl",
+          website: "www.technischexpertjansen.nl",
+          phone: "0595-431650",
+          storeid: 19,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.5949439, 53.2935352] },
+        type: "Feature",
+        properties: {
+          name: "Vaatstra BV",
+          address: "Verbindingsweg  19",
+          zipcode: "9781 DA Bedum",
+          email: "vaatstra@vaatstra.nl",
+          website: "www.vaatstra.nl",
+          phone: "050-3012832",
+          storeid: 20,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.969845299999999, 52.9742684] },
+        type: "Feature",
+        properties: {
+          name: "Technisch Advies en Installatiebureau HvK",
+          address: "Electronicaweg 25",
+          zipcode: "9503 GA Stadskanaal",
+          email: "info@hvkstadskanaal.nl",
+          website: "www.hvkstadskanaal.nl",
+          phone: "0599-650226",
+          storeid: 21,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.961631799999999, 52.9815883] },
+        type: "Feature",
+        properties: {
+          name: "Kloeze Installatietechniek",
+          address: "Hoofdstraat 109",
+          zipcode: "9501 CR Stadskanaal",
+          email: "info@kloeze.nl",
+          website: "www.kloeze.nl",
+          phone: "0599-618886",
+          storeid: 22,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.8080114, 52.7653785] },
+        type: "Feature",
+        properties: {
+          name: "Assen Installatietechniek & badkamers",
+          address: "Meulenakker 8",
+          zipcode: "7841 EP Sleen",
+          email: "info@assentib.nl",
+          website: "www.assentib.nl",
+          phone: "0591-390620",
+          storeid: 23,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.3417371, 52.7603662] },
+        type: "Feature",
+        properties: {
+          name: "Advies & Installatiebedrijf Intechneau",
+          address: "Voor de Blanken 3",
+          zipcode: "7963 RP Ruinen",
+          email: "info@intechneau.nl",
+          website: "www.intechneau.nl",
+          phone: "0522-470456",
+          storeid: 24,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.3160228, 52.85667] },
+        type: "Feature",
+        properties: {
+          name: "Installatiebedrijf Dick Sjabbens",
+          address: "Hoofdstraat  35",
+          zipcode: "7981 AD Diever",
+          email: "info@dick-sjabbens.nl",
+          website: "www.dick-sjabbens.nl",
+          phone: "0521-591994",
+          storeid: 25,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.5094485, 52.85864669999999] },
+        type: "Feature",
+        properties: {
+          name: "Hupkes Installatie",
+          address: "Linthorst Homanweg  2",
+          zipcode: "9411 KC Beilen",
+          email: "info@hupkes.com",
+          website: "www.hupkes.com",
+          phone: "0593-524040",
+          storeid: 26,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.9105759, 52.42443369999999] },
+        type: "Feature",
+        properties: {
+          name: "Ventilatie NL ",
+          address: "Zuideinde  47",
+          zipcode: "1121 CK Landsmeer ",
+          email: "service@ventilatienl.nl",
+          website: "www.ventilatienl.nl",
+          phone: "0299-771 663",
+          storeid: 27,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.6639751, 52.4013478] },
+        type: "Feature",
+        properties: {
+          name: "Kevin Hoes ",
+          address: "Jan Pieter Zondervanweg  9",
+          zipcode: "2031 AB Haarlem",
+          email: "info@kevinhoes.nl",
+          website: "www.kevinhoes.nl",
+          phone: "06-29 05 10 18",
+          storeid: 28,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.6622657, 52.39246809999999] },
+        type: "Feature",
+        properties: {
+          name: "Centragas van Galen",
+          address: "Mollerusweg  2-6",
+          zipcode: "2031 BZ Haarlem",
+          email: "info@centragas.nl",
+          website: "www.centragas.nl",
+          phone: "023-551 38 38",
+          storeid: 29,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.3517925, 52.1653792] },
+        type: "Feature",
+        properties: {
+          name: "De Vreeden Installatietechniek B.V. ",
+          address: "Xenonweg  5",
+          zipcode: "3812 SZ Amersfoort",
+          email: "info@devreeden.nl",
+          website: "www.devreeden.nl",
+          phone: "033-47 00 300",
+          storeid: 30,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.2958288, 51.98789619999999] },
+        type: "Feature",
+        properties: {
+          name: "Rob Balk Loodgietersbedrijf",
+          address: "Trechtweg  10A",
+          zipcode: "3945 PL Cothen",
+          email: "info@robbalk.nl",
+          website: "www.robbalk.nl",
+          phone: "0343-563089",
+          storeid: 31,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.216905199999999, 51.9412137] },
+        type: "Feature",
+        properties: {
+          name: "Floor installatie techniek",
+          address: "Industrieweg  23",
+          zipcode: "4104 AP Culemborg",
+          email: "info@installatiebedrijf-floor.nl",
+          website: "www.installatiebedrijf-floor.nl",
+          phone: "0345-571 303",
+          storeid: 32,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.0583275, 52.1440786] },
+        type: "Feature",
+        properties: {
+          name: "Fris ventilatie ",
+          address: "Maarsseveensevaart 88b",
+          zipcode: "3601 CG Maarssen",
+          email: "info@frisventilatie.nl",
+          website: "www.frisventilatie.nl",
+          phone: "0346-57 01 14",
+          storeid: 33,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.5828523, 52.26745409999999] },
+        type: "Feature",
+        properties: {
+          name: "IMP ",
+          address: "Industrieweg  12-7",
+          zipcode: "3881 LB Putten ",
+          email: "Info@impputten.nl",
+          website: "www.impputten.nl",
+          phone: "0341 - 74 52 63",
+          storeid: 34,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.1773462, 52.3459946] },
+        type: "Feature",
+        properties: {
+          name: "VSN ",
+          address: "Transistorstraat 58D",
+          zipcode: "1322 CG Almere",
+          email: "mail@ventilatieservicenederland.nl",
+          website: "www.ventilatieservicenederland.nl",
+          phone: "088 - 536 0 536",
+          storeid: 35,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.0339216, 51.653572] },
+        type: "Feature",
+        properties: {
+          name: "gebr Beije BV",
+          address: "Wilgenstraat 3",
+          zipcode: "4307 DA Oosterland",
+          email: "info@gebrbeije.nl",
+          website: "https://www.gebrbeije.nl/",
+          phone: "0111 64 15 09",
+          storeid: 36,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.0532243, 51.47998579999999] },
+        type: "Feature",
+        properties: {
+          name: "van Veldhuisen Techniek",
+          address: "Krab  1C",
+          zipcode: "4401 PA Yerseke",
+          email: "info@vanveldhuisentechniek.nl",
+          website: "https://www.vanveldhuisentechniek.nl",
+          phone: "+31113 \u00e2\u20ac\u201c 571 914",
+          storeid: 37,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [3.9106495, 51.2716469] },
+        type: "Feature",
+        properties: {
+          name: "van rijn installatie",
+          address: "Noordpolderstraat 2",
+          zipcode: "4571 LR Axel",
+          email: "info@vanrijninstallatie.nl",
+          website: "https://www.vanrijninstallatie.nl/",
+          phone: "0115-561717",
+          storeid: 38,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.223550299999999, 51.5414365] },
+        type: "Feature",
+        properties: {
+          name: "installatiebedrijf Bevelander",
+          address: "Stevinweg 19",
+          zipcode: "4691 SM Tholen",
+          email: "info@installatiebedrijf-bevelander.nl",
+          website: "http://www.installatiebedrijf-bevelander.nl/",
+          phone: "0166-603155",
+          storeid: 39,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.580382999999999, 51.5368] },
+        type: "Feature",
+        properties: {
+          name: "De Bruijn Installatiewerken B.V.",
+          address: "Kraaihei  40",
+          zipcode: "4715 RV Rucphen",
+          email: "info@totaal-installateur.nl",
+          website: "https://www.totaal-installateur.nl/",
+          phone: "0165-820981",
+          storeid: 40,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.7324169, 51.5690939] },
+        type: "Feature",
+        properties: {
+          name: "van den Buijs installaties",
+          address: "Rithmeesterpark 15",
+          zipcode: "4838 GZ Breda",
+          email: "info@vandenbuijs.nl",
+          website: "https://vandenbuijs.nl/",
+          phone: "076 597 2229",
+          storeid: 41,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.810323299999999, 51.6738426] },
+        type: "Feature",
+        properties: {
+          name: "van dijk made",
+          address: "Brieltjenspolder 3",
+          zipcode: "4921 PK Made",
+          email: "info@vandijkmade.nl",
+          website: "https://www.vandijkmade.nl/",
+          phone: "0162 - 682671",
+          storeid: 42,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.744357, 51.668178] },
+        type: "Feature",
+        properties: {
+          name: "van Alphen en Roest",
+          address: "Thijssenweg 20",
+          zipcode: "4927 PC Hooge Zwaluwe",
+          email: "info@vanalphenenroest.nl",
+          website: "https://www.vanalphenenroest.nl/",
+          phone: "076-5931253",
+          storeid: 43,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.0491594, 51.53044269999999] },
+        type: "Feature",
+        properties: {
+          name: "H. de Bont",
+          address: "Maidstone 44",
+          zipcode: "5026 SK Tilburg",
+          email: "Info@hdebont.nl",
+          website: "http://www.hdebont.nl/",
+          phone: "013 535 61 35",
+          storeid: 44,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.1758077, 51.5374154] },
+        type: "Feature",
+        properties: {
+          name: "Van Velthoven & Kruijssen",
+          address: "Sonman 19",
+          zipcode: "5066 GJ Moergestel",
+          email: "info@velthovenkruijssen.nl",
+          website: "https://www.velthovenkruijssen.nl/",
+          phone: "013-5131284",
+          storeid: 45,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.2812754, 51.4945447] },
+        type: "Feature",
+        properties: {
+          name: "van gerven installatie BV",
+          address: "Fransebaan 9",
+          zipcode: "5091 JN oostelbeers",
+          email: "info@vangerveninstallatie.nl",
+          website: "http://www.vangerveninstallatie.nl/",
+          phone: "0499 - 325 843",
+          storeid: 46,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [4.9427761, 51.442356] },
+        type: "Feature",
+        properties: {
+          name: "Mark Geerts",
+          address: "Winkelhaak 8",
+          zipcode: "5111 PT Baarle Nassau",
+          email: "info@markgeerts.nl",
+          website: "https://www.markgeerts.nl/",
+          phone: "013-5906659",
+          storeid: 47,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.174110799999999, 51.6944576] },
+        type: "Feature",
+        properties: {
+          name: "installatiebedrijf P. De Bonth BV",
+          address: "Vimmerik 2N",
+          zipcode: "5253 CB Nieuwkuijk",
+          email: "info@pdebonthbv.nl",
+          website: "https://www.pdebonthbv.nl/",
+          phone: "073 - 511 4344",
+          storeid: 48,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.7075499, 51.5651273] },
+        type: "Feature",
+        properties: {
+          name: "van heugten installatie",
+          address: "de Dieze 8",
+          zipcode: "5422 VS Gemert",
+          email: "info@van-heugten.nl\u00c2\u00a0",
+          website: "https://www.van-heugten.nl/",
+          phone: "0492 \u00e2\u20ac\u201c 365 632",
+          storeid: 49,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.3902104, 51.35530809999999] },
+        type: "Feature",
+        properties: {
+          name: "Aqualon van Zutphen installatietechniek",
+          address: "Vlasstraat 8",
+          zipcode: "5561 AJ Riethoven",
+          email: "info@aqualonvanzutphen.nl",
+          website: "https://aqualonvanzutphen.nl/",
+          phone: "+31 (0)40 201 33 27",
+          storeid: 50,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.4432586, 51.4762747] },
+        type: "Feature",
+        properties: {
+          name: "AJ Loots installatiebedrijf",
+          address: "Avignonlaan 14",
+          zipcode: "5627 GA Eindhoven",
+          email: "info@ajloots.nl",
+          website: "https://www.ajloots.nl/",
+          phone: "040-2430910",
+          storeid: 51,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.4469316, 51.43959359999999] },
+        type: "Feature",
+        properties: {
+          name: "van den Hoff",
+          address: "van Kanstraat  3",
+          zipcode: "5652 GA Eindhoven",
+          email: "info@vandenhoff.nl",
+          website: "https://www.vandenhoff.nl/",
+          phone: "040 251 76 26",
+          storeid: 52,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.672653, 51.4832242] },
+        type: "Feature",
+        properties: {
+          name: "Jules Otgens",
+          address: "Bakelsedijk 62",
+          zipcode: "5701 HD Helmond",
+          email: "info@julesotgens.nl",
+          website: "https://www.julesotgens.nl/",
+          phone: "0492 545 741",
+          storeid: 53,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.6279128, 51.4547324] },
+        type: "Feature",
+        properties: {
+          name: "Heesmans Installatie Techniek B.V.",
+          address: "Brandevoortse Dreef 101",
+          zipcode: "5706 SL Helmond",
+          email: "info@heesmans.nl",
+          website: "https://www.heesmans.nl/",
+          phone: "+31 (0)492 66 13 52",
+          storeid: 54,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.6278943, 51.540465] },
+        type: "Feature",
+        properties: {
+          name: "van de Ven Hollanders",
+          address: "Kapelstraat 19",
+          zipcode: "5741 CB Beek en Donk",
+          email: "info@ven-hollanders.nl",
+          website: "https://www.ven-hollanders.nl/",
+          phone: "0492 - 464343",
+          storeid: 55,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.7982789, 51.448592] },
+        type: "Feature",
+        properties: {
+          name: "Verhees en van Dijk Installatietechniek BV",
+          address: "Piet Mondriaanstraat 10",
+          zipcode: "5753 DJ Deurne",
+          email: "info@verheesenvandijk.nl",
+          website: "https://www.verheesenvandijk.nl/",
+          phone: "0493-341634",
+          storeid: 56,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.9363762, 51.570871] },
+        type: "Feature",
+        properties: {
+          name: "van Gemert installatiegroep",
+          address: "Oploseweg 12b",
+          zipcode: "5825 HN Overloon",
+          email: "info@vangemertbv.nl\u00c2\u00a0",
+          website: "https://www.vangemertbv.nl/",
+          phone: "+31 (0)478 - 50 71 71",
+          storeid: 57,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.8970205, 51.6220553] },
+        type: "Feature",
+        properties: {
+          name: "Sommers installatietechniek",
+          address: "Stevensbeekseweg 1",
+          zipcode: "5845 ER st Anthonis",
+          email: "info@sommers-installatietechniek.nl",
+          website: "https://www.sommers-installatietechniek.nl/",
+          phone: "0485-382344",
+          storeid: 58,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.0498099, 51.6014546] },
+        type: "Feature",
+        properties: {
+          name: "Giessen installatiebedrijf BV",
+          address: "Rijksweg 11b",
+          zipcode: "5854 AR Bergen",
+          email: "info@giesen-installatie.nl",
+          website: "https://www.giesen-installatie.nl/",
+          phone: "+31 (0) 485 \u00e2\u20ac\u201c 348050",
+          storeid: 59,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.871522, 51.1076831] },
+        type: "Feature",
+        properties: {
+          name: "installatiebedrijf John van Neer BV",
+          address: "St Jorisstraat 31",
+          zipcode: "6101 CA Echt",
+          email: "info@johnvanneer.nl",
+          website: "www.johnvanneer.nl",
+          phone: "0475 48 33 91",
+          storeid: 60,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.8341439, 50.8011958] },
+        type: "Feature",
+        properties: {
+          name: "Jef Wouters installatie",
+          address: "Brede Hoolstraat 2",
+          zipcode: "6274 NG Reijmerstok",
+          email: "info@jefwoutersinstallaties.nl",
+          website: "http://www.jefwoutersinstallaties.nl/",
+          phone: "043-4574078",
+          storeid: 61,
+        },
+      },
+      {
+        geometry: {
+          type: "point",
+          coordinates: [6.027494900000001, 50.88767379999999],
+        },
+        type: "Feature",
+        properties: {
+          name: "A Ploem & zoon BV",
+          address: "Marconistraat 32",
+          zipcode: "6372 PN Landgraaf",
+          email: "info@aploem.nl",
+          website: "https://aploem.nl/",
+          phone: "045\u00c2\u00a0 567 69 69",
+          storeid: 62,
+        },
+      },
+      {
+        geometry: {
+          type: "point",
+          coordinates: [5.918795299999999, 51.91627829999999],
+        },
+        type: "Feature",
+        properties: {
+          name: "Denned",
+          address: "Hortensialaan  1b",
+          zipcode: "6851 TB Huissen",
+          email: "info@denned.nl",
+          website: "www.denned.nl",
+          phone: "088 033 66 33",
+          storeid: 63,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.2856134, 52.3305802] },
+        type: "Feature",
+        properties: {
+          name: "Loohuis Installatie- technieken B.V.",
+          address: "Uilenbroekstraat 64",
+          zipcode: "8111 BE Heeten",
+          email: "heeten@loohuisgroep.nl",
+          website: "https://www.loohuisgroep.nl/",
+          phone: "+31 572388488",
+          storeid: 64,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.993061, 52.1876944] },
+        type: "Feature",
+        properties: {
+          name: "Loohuis- Installatietechnieken B.V.",
+          address: "Minden 26",
+          zipcode: "7327 AW Apeldoorn",
+          email: "apeldoorn@loohuisgroep.nl",
+          website: "https://www.loohuisgroep.nl/",
+          phone: "+31 553681600",
+          storeid: 65,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.596089699999999, 52.5738954] },
+        type: "Feature",
+        properties: {
+          name: "Loohuis Hardenberg B.V.",
+          address: "Kruiwiel 9",
+          zipcode: "7773 NL Hardenberg",
+          email: "hardenberg@loohuisgroep.nl",
+          website: "https://www.loohuisgroep.nl/",
+          phone: "+31 523625060",
+          storeid: 66,
+        },
+      },
+      {
+        geometry: {
+          type: "point",
+          coordinates: [6.805959199999999, 52.38114090000001],
+        },
+        type: "Feature",
+        properties: {
+          name: "Loohuis Installatie- technieken B.V.",
+          address: "Pastoor Boddestraat 18",
+          zipcode: "7666 LB Fleringen",
+          email: "fleringen@loohuisgroep.nl",
+          website: "https://www.loohuisgroep.nl/",
+          phone: "+31 546629629",
+          storeid: 67,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.6064155, 52.3806951] },
+        type: "Feature",
+        properties: {
+          name: "Loohuis Service B.V.",
+          address: "Bedrijvenpark Twente 445a",
+          zipcode: "7602 KM Almelo",
+          email: "almelo@loohuisgroep.nl",
+          website: "https://www.loohuisgroep.nl/",
+          phone: "0546 - 577 733",
+          storeid: 68,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.7700467, 52.2837231] },
+        type: "Feature",
+        properties: {
+          name: "Loohuis Installatietechnieken",
+          address: "Wegtersweg 37",
+          zipcode: "7556 BP Hengelo OV",
+          email: "hengelo@loohuisgroep.nl",
+          website: "https://www.loohuisgroep.nl/",
+          phone: "+31 (74) 249 02 90",
+          storeid: 69,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.2907158, 52.37870849999999] },
+        type: "Feature",
+        properties: {
+          name: "Elders Totaalinstallateur Raalte",
+          address: "Boeierstraat\u00a0 2",
+          zipcode: "8102 HS Raalte",
+          email: "info@elders-installatie.nl",
+          website: "https://www.loohuisgroep.nl/",
+          phone: "0572 - 35 12 78",
+          storeid: 70,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.1306914, 52.5009716] },
+        type: "Feature",
+        properties: {
+          name: "Loohuis-Assies Installatietechnieken Zwolle",
+          address: "Pascalweg\u00a0 14",
+          zipcode: "8013 RC Zwolle",
+          email: "zwolle@loohuisgroep.nl",
+          website: "https://www.loohuisgroep.nl/",
+          phone: "038 - 468 1800",
+          storeid: 71,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.717130699999999, 52.1564359] },
+        type: "Feature",
+        properties: {
+          name: "Installatiebedrijf Michorius",
+          address: "Handelsstraat 9",
+          zipcode: "7482 GW Haaksbergen",
+          email: "info@michorius.com",
+          website: "https://www.michorius.com/",
+          phone: "053 - 572 2339",
+          storeid: 1,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [6.003012399999999, 50.8442076] },
+        type: "Feature",
+        properties: {
+          name: "Hesi",
+          address: "Koperslager 14",
+          zipcode: "6422 PR Heerlen",
+          email: "service@hesi.eu",
+          website: "https://hesi.eu/",
+          phone: "045 - 5412220",
+          storeid: 73,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [5.812520699999999, 51.0514142] },
+        type: "Feature",
+        properties: {
+          name: "Technisch Bureau Savelkoul B.V.",
+          address: "De Tramweg 8",
+          zipcode: "6121 RX Born",
+          email: "info@technischbureausavelkoul.nl",
+          website: "https://www.technischbureausavelkoul.nl/",
+          phone: "046 - 4852267",
+          storeid: 74,
+        },
+      },
+      {
+        geometry: { type: "point", coordinates: [7.05375199999999, 52.8876378] },
+        type: "Feature",
+        properties: {
+          name: "Airhome Ventilatieservice BV",
+          address: "Drenthweg 19",
+          zipcode: "9561 AZ Ter Apel",
+          email: " info@airhome.nl",
+          website: "https://www.airhome.nl/",
+          phone: "085 - 0685030",
+          storeid: 75,
+        },
+      },
+    ],
+  };
+
+  // Style credit: https://snazzymaps.com/style/1/pale-dawn
+  var mapStyle = [
+    {
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#f5f5f5",
+        },
+      ],
+    },
+    {
+      elementType: "labels.icon",
+      stylers: [
+        {
+          visibility: "off",
+        },
+      ],
+    },
+    {
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#616161",
+        },
+      ],
+    },
+    {
+      elementType: "labels.text.stroke",
+      stylers: [
+        {
+          color: "#f5f5f5",
+        },
+      ],
+    },
+    {
+      featureType: "administrative.land_parcel",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#bdbdbd",
+        },
+      ],
+    },
+    {
+      featureType: "poi",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#eeeeee",
+        },
+      ],
+    },
+    {
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#757575",
+        },
+      ],
+    },
+    {
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#e5e5e5",
+        },
+      ],
+    },
+    {
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#9e9e9e",
+        },
+      ],
+    },
+    {
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#ffffff",
+        },
+      ],
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#757575",
+        },
+      ],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#dadada",
+        },
+      ],
+    },
+    {
+      featureType: "road.highway",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#616161",
+        },
+      ],
+    },
+    {
+      featureType: "road.local",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#9e9e9e",
+        },
+      ],
+    },
+    {
+      featureType: "transit.line",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#e5e5e5",
+        },
+      ],
+    },
+    {
+      featureType: "transit.station",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#eeeeee",
+        },
+      ],
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [
+        {
+          color: "#c9c9c9",
+        },
+      ],
+    },
+    {
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [
+        {
+          color: "#9e9e9e",
+        },
+      ],
+    },
+  ];
+
+  /**
+  * Initialize the Google Map.
+  */
+  function initMap() {
+    // Create the map.
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 8,
+      center: { lat: 52.2093661, lng: 4.1585262 },
+      styles: mapStyle,
+      mapTypeControl: false,
+      zoomControl: false,
+      streetViewControl: false,
+      scaleControl: false,
+    });
+
+    // Load the stores GeoJSON onto the map.
+    map.data.addGeoJson(storeLocations, { idPropertyName: "storeid" });
+
+    // Define the custom marker icons, using the store's "category".
+    map.data.setStyle(function (feature) {
+      return {
+        icon: {
+          url:
+            "https://www.zehnder.nl/sites/zehnder.nl/files/styles/col-8/public/pictures/maps-marker.png",
+          scaledSize: new google.maps.Size(20, 20),
+        },
+        title: feature.getProperty("name"),
+      };
+    });
+
+    var apiKey = "AIzaSyBIJrfc1DxjzAl9AlJl1QeyAHsKyWaa4oQ";
+    var infoWindow = new google.maps.InfoWindow();
+
+    ("use strict");
+
+    // Show the information for a store when its marker is clicked.
+    map.data.addListener("click", function (event) {
+      var name = event.feature.getProperty("name");
+      var address = event.feature.getProperty("address");
+      var zipcode = event.feature.getProperty("zipcode");
+      var email = event.feature.getProperty("email");
+      var website = event.feature.getProperty("website");
+      var position = event.feature.getGeometry().get();
+      var encodedAddress = encodeURI(address + " " + zipcode);
+      if (website.substring(0, 4) != "http" && website.substring(0, 2) != "//") {
+        website = "http://" + website;
+      }
+      var content = '<div class="info-window">\n            <h2>'
+        .concat(
+          name,
+          '</h2>\n            <div class="left">\n                <p>'
+        )
+        .concat(address, '</p>\n                <p style="margin-bottom: 15px;">')
+        .concat(
+          zipcode,
+          '</p>\n                <p>\n                    <img style="margin-right: 5px;" height="20" src="//www.gstatic.com/images/icons/material/system_gm/1x/place_gm_blue_24dp.png">\n                    <a href="mailto:'
+        )
+        .concat(email, '">')
+        .concat(
+          email,
+          '</a>\n                </p>\n                <p>\n                    <img style="margin-right: 5px;" src="//www.gstatic.com/images/icons/material/system_gm/1x/public_gm_blue_24dp.png" height="20">\n                    <a href="'
+        )
+        .concat(website, '" target="_blank">')
+        .concat(
+          website,
+          '</a>\n                </p>\n            </div>\n            <div class="right">\n                <a target="_blank" href="https://www.google.com/maps/dir//'
+        )
+        .concat(
+          encodedAddress,
+          '" class="route">\n                    <img src="https://www.gstatic.com/images/icons/material/system/1x/directions_white_18dp.png" />\n                    <p>Route</p>\n                </a>\n            </div>\n        </div>'
+        );
+      infoWindow.setContent(content);
+      infoWindow.setPosition(position);
+      infoWindow.setOptions({
+        pixelOffset: new google.maps.Size(0, -30),
+      });
+      infoWindow.open(map);
+
+      if (window.outerWidth < 500) {
+        map.panBy(0, -160);
+      }
+    });
+
+    // Build and add the search bar
+    var card = document.createElement("div");
+    var titleBar = document.createElement("div");
+    var title = document.createElement("h2");
+    var container = document.createElement("div");
+    var input = document.createElement("input");
+    var button = document.createElement("input");
+    var options = {
+      componentRestrictions: { country: "nl" },
+    };
+
+    card.setAttribute("id", "pac-card");
+    card.classList.add("pac-card");
+    title.setAttribute("id", "title");
+    title.textContent = "Zehnder installateur in de buurt";
+    titleBar.appendChild(title);
+    container.setAttribute("id", "pac-container");
+    input.setAttribute("id", "pac-input");
+    input.setAttribute("type", "text");
+    input.setAttribute("placeholder", "Voer een adres in");
+    container.appendChild(input);
+    button.setAttribute("type", "button");
+    button.setAttribute("value", "Toon installateurs");
+    card.appendChild(titleBar);
+    card.appendChild(container);
+    card.appendChild(button);
+
+    if (window.outerWidth > 767) {
+      map.controls[google.maps.ControlPosition.LEFT_CENTER].push(card);
+    } else {
+      map.controls[google.maps.ControlPosition.TOP_CENTER].push(card);
+    }
+
+    setTimeout(function () {
+      document.getElementById('pac-card-placeholder').remove();
+
+      if (window.inputFieldHasFocus) {
+        document.getElementById('pac-input').focus();
+      }
+    }, 750)
+
+    // Make the search bar into a Places Autocomplete search bar and select
+    // which detail fields should be returned about the place that
+    // the user selects from the suggestions.
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+    autocomplete.setFields(["address_components", "geometry", "name"]);
+
+    // Set the origin point when the user selects an address
+    var originMarker = new google.maps.Marker({ map: map });
+    originMarker.setVisible(false);
+    let originLocation = map.getCenter();
+
+    function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+      try {
+        var info = gen[key](arg);
+        var value = info.value;
+      } catch (error) {
+        reject(error);
+        return;
+      }
+      if (info.done) {
+        resolve(value);
+      } else {
+        Promise.resolve(value).then(_next, _throw);
+      }
+    }
+
+    function _asyncToGenerator(fn) {
+      return function () {
+        var self = this,
+          args = arguments;
+        return new Promise(function (resolve, reject) {
+          var gen = fn.apply(self, args);
+          function _next(value) {
+            asyncGeneratorStep(
+              gen,
+              resolve,
+              reject,
+              _next,
+              _throw,
+              "next",
+              value
+            );
+          }
+          function _throw(err) {
+            asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+          }
+          _next(undefined);
+        });
+      };
+    }
+
+    autocomplete.addListener(
+      "place_changed",
+      /*#__PURE__*/ _asyncToGenerator(
+        /*#__PURE__*/ regeneratorRuntime.mark(function _callee() {
+          var place;
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch ((_context.prev = _context.next)) {
+                case 0:
+                  originMarker.setVisible(false);
+                  originLocation = map.getCenter();
+                  place = autocomplete.getPlace();
+
+                  if (place.geometry) {
+                    _context.next = 6;
+                    break;
+                  }
+
+                  // User entered the name of a Place that was not suggested and
+                  // pressed the Enter key, or the Place Details request failed.
+                  window.alert(
+                    "No address available for input: '" + place.name + "'"
+                  );
+                  return _context.abrupt("return");
+
+                case 6:
+                  // Recenter the map to the selected address
+                  originLocation = place.geometry.location;
+                  map.setCenter(originLocation);
+                  map.setZoom(10);
+                  originMarker.setPosition(originLocation);
+                  originMarker.setVisible(false);
+
+                case 12:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        })
+      )
+    );
+  }
+
+  function renderSearch() {
+    // Build and add the search bar
+    var card = document.createElement("div");
+    var titleBar = document.createElement("div");
+    var title = document.createElement("h2");
+    var container = document.createElement("div");
+    var input = document.createElement("input");
+    var button = document.createElement("input");
+
+    card.setAttribute("id", "pac-card-placeholder");
+    card.classList.add("pac-card");
+    title.setAttribute("id", "title");
+    title.textContent = "Zehnder installateur in de buurt";
+    titleBar.appendChild(title);
+    container.setAttribute("id", "pac-container");
+    input.setAttribute("id", "pac-input");
+    input.setAttribute("type", "text");
+    input.setAttribute("placeholder", "Voer een adres in");
+    container.appendChild(input);
+    button.setAttribute("type", "button");
+    button.setAttribute("value", "Toon installateurs");
+    card.appendChild(titleBar);
+    card.appendChild(container);
+    card.appendChild(button);
+
+    return card;
+  }
+
+  var clickedMap = false;
+  function showMap() {
+    if (!clickedMap) {
+      clickedMap = true;
+
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBIJrfc1DxjzAl9AlJl1QeyAHsKyWaa4oQ&libraries=places&callback=initMap';
+      document.body.appendChild(script);
+    }
+  }
+  function prepareMap() {
+    var card = renderSearch();
+
+    card.addEventListener("mouseenter", showMap);
+    card.addEventListener("focusin", function () {
+      showMap();
+      window.inputFieldHasFocus = true;
+    });
+    card.addEventListener("click", showMap);
+
+    card.style.position = "absolute";
+    if (window.outerWidth > 767) {
+
+      card.style.top = "251px";
+      card.style.left = 0;
+    }
+    else {
+      card.style.top = 0;
+      card.style.left = (window.outerWidth - 270) / 2 + "px";
+    }
+
+    card.id = "pac-card-placeholder";
+    document.getElementById("node-31333").appendChild(card);
+  }
+
+  prepareMap();
+
+</script>
